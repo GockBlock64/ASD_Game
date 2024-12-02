@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="ASD_Game"
-config/features=PackedStringArray("4.2", "Mobile")
+run/main_scene="res://scenes/game.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[physics]
+
+2d/default_gravity=0.0
+2d/default_gravity_vector=Vector2(0, 0)
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
