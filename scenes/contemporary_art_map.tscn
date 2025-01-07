@@ -1,16 +1,104 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfhttnxliqedq"]
+[gd_scene load_steps=14 format=3 uid="uid://dfhttnxliqedq"]
 
-[ext_resource type="Script" path="res://scripts/contemporary_art_map.gd" id="1_qwunc"]
 [ext_resource type="Texture2D" uid="uid://drxjmp7p2iflw" path="res://assets/images/ContemporaryArtMap.jpg" id="1_wm5gk"]
 [ext_resource type="PackedScene" uid="uid://ghetwe30st2y" path="res://scenes/player.tscn" id="2_7gko0"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_iuocl"]
 
-[node name="ContemporaryArtMap" type="Node2D"]
-script = ExtResource("1_qwunc")
+[sub_resource type="GDScript" id="GDScript_er6cc"]
+script/source = "extends Node2D
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	var x_direction = Input.get_axis(\"ui_left\", \"ui_right\")
+	var y_direction = Input.get_axis(\"ui_up\", \"ui_down\")
+	if x_direction:
+		print(\"X: \" + str(x_direction))
+	if y_direction:
+		print(\"Y: \" + str(y_direction))
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7dv0"]
+size = Vector2(16, 273)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2kba"]
+size = Vector2(410.672, 12.1118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovug7"]
+size = Vector2(11.5, 207.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyoiy"]
+size = Vector2(11, 207.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sv68x"]
+size = Vector2(402, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbo0l"]
+size = Vector2(12.5, 210.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oooj7"]
+size = Vector2(263.339, 9.48805)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc32r"]
+size = Vector2(12.4232, 60.5029)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfqp0"]
+size = Vector2(10.3015, 150.356)
+
+[node name="ContemporaryArtMap" type="Node2D"]
+script = SubResource("GDScript_er6cc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(-1, -1)
 texture = ExtResource("1_wm5gk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(232, 304.5)
+shape = SubResource("RectangleShape2D_i7dv0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(23, 345)
+rotation = 0.0698132
+shape = SubResource("RectangleShape2D_v2kba")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-169.25, 229.75)
+shape = SubResource("RectangleShape2D_ovug7")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-162.5, -140.25)
+shape = SubResource("RectangleShape2D_fyoiy")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(28, -251)
+rotation = 0.0523599
+shape = SubResource("RectangleShape2D_sv68x")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(230.75, -143.75)
+shape = SubResource("RectangleShape2D_tbo0l")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(337.215, -145.579)
+rotation = -0.656244
+shape = SubResource("RectangleShape2D_oooj7")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(444, -250)
+rotation = 0.349066
+shape = SubResource("RectangleShape2D_mc32r")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(457, -349)
+rotation = 0.0349066
+shape = SubResource("RectangleShape2D_tfqp0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -1)
