@@ -7,6 +7,7 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+position_smoothing_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_swo3q")]
 script = ExtResource("2_xkw3x")
