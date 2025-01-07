@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfhttnxliqedq"]
+
+[ext_resource type="Script" path="res://scripts/contemporary_art_map.gd" id="1_qwunc"]
+[ext_resource type="Texture2D" uid="uid://drxjmp7p2iflw" path="res://assets/images/ContemporaryArtMap.jpg" id="1_wm5gk"]
+[ext_resource type="PackedScene" uid="uid://ghetwe30st2y" path="res://scenes/player.tscn" id="2_7gko0"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="4_iuocl"]
+
+[node name="ContemporaryArtMap" type="Node2D"]
+script = ExtResource("1_qwunc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+texture = ExtResource("1_wm5gk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -1)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Player" parent="." instance=ExtResource("2_7gko0")]
+position = Vector2(112, 244)
+script = ExtResource("4_iuocl")
