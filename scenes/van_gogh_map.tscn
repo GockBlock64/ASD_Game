@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://b10mcmo1spwcy"]
+
+[ext_resource type="Texture2D" uid="uid://co0vs3sed86ma" path="res://assets/images/VanGoghArtMap.jpg" id="1_xwfj4"]
+[ext_resource type="PackedScene" uid="uid://ghetwe30st2y" path="res://scenes/player.tscn" id="2_sokue"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="3_8lgss"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2c0rn"]
+a = Vector2(954, 677)
+b = Vector2(-973, 678)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_06ah2"]
+a = Vector2(-958, 741)
+b = Vector2(-960, -868)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hbmtk"]
+a = Vector2(1101, -679)
+b = Vector2(-1039, -682)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_386lu"]
+a = Vector2(958, 740)
+b = Vector2(960, -766)
+
+[node name="VanGoghMap" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_xwfj4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(30, 674, 23, 648, 1, 648, 38, 541, 95, 531, 101, 484, 79, 476, 111, 298, 115, 135, 136, 129, 173, 311, 255, 234, 292, 250, 474, 248, 520, 301, 540, 335, 522, 345, 520, 462, 628, 427, 715, 585, 695, 610, 693, 668)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_2c0rn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_06ah2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_hbmtk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_386lu")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(957, 115, 921, 115, 882, 137, 826, 145, 757, 133, 707, 129, 701, 138, 704, 158, 722, 180, 779, 203, 761, 219, 756, 238, 663, 234, 645, 242, 639, 254, 643, 273, 659, 287, 616, 285, 577, 294, 531, 287, 510, 290, 476, 303, 438, 287, 420, 280, 405, 281, 383, 290, 347, 283, 329, 273, 322, 282, 326, 300, 353, 322, 393, 341, 434, 354, 453, 347, 472, 350, 508, 344, 522, 344, 536, 340, 578, 347, 599, 335, 555, 365, 539, 384, 511, 385, 495, 389, 485, 401, 489, 413, 510, 425, 538, 425, 551, 420, 578, 424, 611, 434, 706, 466, 799, 485, 879, 493, 862, 495, 882, 510, 908, 512, 929, 504, 953, 511)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(21, -211, 86, -207, 144, -173, 224, -116, 243, -55, 243, 21, 224, 78, 197, 143, 159, 182, 89, 226, 40, 249, -45, 256, -132, 238, -204, 202, -266, 148, -314, 91, -366, -22, -384, -120, -380, -209, -336, -330, -300, -409, -221, -514, -125, -596, -1, -672, -54, -672, -102, -640, -188, -574, -250, -510, -290, -454, -340, -377, -371, -294, -392, -241, -394, -146, -493, -120, -563, -50, -574, -32, -512, 144, -361, 176, -379, 150, -317, 115, -322, 135, -279, 173, -223, 220, -177, 243, -112, 268, -14, 282, 70, 268, 103, 251, 173, 200, 175, 274, 237, 219, 268, 154, 300, 75, 302, 34, 302, -37, 275, -92, 227, -146, 189, -173, 148, -209, 119, -219)
+
+[node name="Player" parent="." instance=ExtResource("2_sokue")]
+position = Vector2(-55, -45)
+script = ExtResource("3_8lgss")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
