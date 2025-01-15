@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://blqv33hsifh71"]
+
+[ext_resource type="Texture2D" uid="uid://bsfv38maa12d" path="res://assets/images/CaveArtMap.jpg" id="1_htgbn"]
+[ext_resource type="PackedScene" uid="uid://ghetwe30st2y" path="res://scenes/player.tscn" id="2_657py"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="3_wgyww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1uw4"]
+size = Vector2(1813, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_titds"]
+size = Vector2(20, 2596)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dj0t6"]
+size = Vector2(1822.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wen08"]
+size = Vector2(20, 2591)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_htgbn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4.5, 1289.5)
+shape = SubResource("RectangleShape2D_m1uw4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-911, 5)
+shape = SubResource("RectangleShape2D_titds")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.25, -1289)
+shape = SubResource("RectangleShape2D_dj0t6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(914, 4.5)
+shape = SubResource("RectangleShape2D_wen08")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-760, 1272, -777, 1214, -785, 1168, -804, 1098, -820, 1001, -824, 931, -817, 889, -799, 853, -759, 847, -742, 815, -737, 753, -714, 708, -715, 689, -683, 598, -668, 526, -666, 456, -649, 396, -618, 365, -584, 347, -571, 320, -566, 289, -572, 257, -537, 239, -524, 199, -543, 147, -543, 97, -531, 49, -562, -20, -577, -21, -600, -23, -630, -26, -671, -6, -714, -17, -753, -11, -841, 30, -903, 53, -907, 1277)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(664, 1277, 838, 1087, 850, 1052, 852, 981, 821, 888, 765, 849, 763, 838, 729, 808, 693, 744, 657, 657, 626, 619, 623, 530, 601, 508, 569, 496, 560, 432, 558, 371, 529, 312, 519, 280, 506, 252, 495, 252, 451, 178, 458, 163, 440, 81, 461, 44, 509, 15, 559, 26, 627, 23, 663, 18, 674, -3, 703, -32, 764, -66, 804, -73, 851, -66, 904, -43, 901, 1281)
+
+[node name="Player" parent="." instance=ExtResource("2_657py")]
+position = Vector2(-634, 1172)
+script = ExtResource("3_wgyww")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)
