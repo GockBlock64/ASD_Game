@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgoggahuors8o"]
+
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_hcq2v"]
+[ext_resource type="Texture2D" uid="uid://b0jtr6tlm8e2e" path="res://assets/images/pause_button.png" id="2_xf3iy"]
+[ext_resource type="Script" path="res://scripts/pause.gd" id="3_vw472"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Virtual Joystick" parent="CanvasLayer" instance=ExtResource("1_hcq2v")]
+
+[node name="Pause" type="Button" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 103.0
+offset_bottom = 103.0
+icon = ExtResource("2_xf3iy")
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("3_vw472")
+
+[connection signal="button_down" from="CanvasLayer/Pause" to="CanvasLayer/Pause" method="_on_button_down"]

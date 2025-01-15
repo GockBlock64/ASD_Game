@@ -1,8 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://d1vtko2m6wv06"]
+[gd_scene load_steps=31 format=3 uid="uid://d1vtko2m6wv06"]
 
 [ext_resource type="Texture2D" uid="uid://dwugqq57ow8hj" path="res://assets/images/TutorialMap.jpeg" id="1_w32uv"]
-[ext_resource type="PackedScene" uid="uid://ghetwe30st2y" path="res://scenes/player.tscn" id="2_70qx8"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="3_3bn3m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkjfi"]
 size = Vector2(43.4274, 2518.2)
@@ -101,7 +99,7 @@ b = Vector2(773, 251)
 a = Vector2(647, 291)
 b = Vector2(649, 497)
 
-[node name="Node2D" type="Node2D"]
+[node name="TutorialMap" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -208,6 +206,7 @@ shape = SubResource("RectangleShape2D_ibluf")
 shape = SubResource("SegmentShape2D_cdx11")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 0)
 shape = SubResource("SegmentShape2D_8fjvw")
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D"]
@@ -263,10 +262,3 @@ shape = SubResource("SegmentShape2D_bqj8s")
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(645, 653, 20, 651, 20, 412, 645, 415, 646, 287, -191, 288, -197, 764, 644, 776)
-
-[node name="Player" parent="." instance=ExtResource("2_70qx8")]
-position = Vector2(-63, -235)
-script = ExtResource("3_3bn3m")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
