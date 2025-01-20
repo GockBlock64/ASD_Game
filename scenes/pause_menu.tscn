@@ -12,15 +12,12 @@ grow_vertical = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Resume" type="Button" parent="CanvasLayer"]
-offset_left = 520.0
-offset_top = 190.0
-offset_right = 669.0
-offset_bottom = 266.0
+offset_right = 70.0
+offset_bottom = 31.0
 text = "Resume"
 
 [node name="Quit" type="Button" parent="CanvasLayer"]
-offset_left = 542.0
-offset_top = 385.0
-offset_right = 656.0
-offset_bottom = 441.0
+offset_top = 35.0
+offset_right = 70.0
+offset_bottom = 66.0
 text = "Quit"
