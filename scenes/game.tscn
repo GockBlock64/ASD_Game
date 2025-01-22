@@ -40,6 +40,3 @@ editor_draw_limits = true
 [editable path="UI"]
 [editable path="PauseMenu"]
 visible = false
-
-[node name="TutorialQuestion1" parent="." instance=ExtResource("7_fimkv")]
-z_index = 4
