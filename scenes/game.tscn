@@ -39,4 +39,3 @@ editor_draw_limits = true
 [editable path="Player"]
 [editable path="UI"]
 [editable path="PauseMenu"]
-visible = false
