@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://u7rjyobhdk8g"]
+
+[node name="TutorialMapQuestion1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 279.0
+offset_bottom = 23.0
+text = "What company are you working for? 
+"
+
+[node name="Choice1" type="Button" parent="CanvasLayer"]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 256.0
+offset_bottom = 56.0
+text = "The Museum of Time"
+
+[node name="Choice2" type="Button" parent="CanvasLayer"]
+offset_left = 25.0
+offset_top = 60.0
+offset_right = 256.0
+offset_bottom = 91.0
+text = "The U.S. Government"
+
+[node name="Choice3" type="Button" parent="CanvasLayer"]
+offset_left = 25.0
+offset_top = 95.0
+offset_right = 256.0
+offset_bottom = 126.0
+action_mode = 0
+text = "Time Variance Authority"
+
+[node name="Choice4" type="Button" parent="CanvasLayer"]
+offset_left = 25.0
+offset_top = 130.0
+offset_right = 256.0
+offset_bottom = 161.0
+text = "The Museum of Art"
