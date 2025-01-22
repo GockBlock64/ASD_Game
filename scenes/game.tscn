@@ -32,6 +32,13 @@ editor_draw_limits = true
 [node name="UI" parent="." instance=ExtResource("4_hdla5")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_ng7l6")]
+
+[connection signal="pressed" from="UI/CanvasLayer/Pause" to="." method="pause"]
+[connection signal="pressed" from="PauseMenu/CanvasLayer/Resume" to="." method="unpause"]
+
+[editable path="Player"]
+[editable path="UI"]
+[editable path="PauseMenu"]
 visible = false
 
 [node name="TutorialQuestion1" parent="." instance=ExtResource("7_fimkv")]
