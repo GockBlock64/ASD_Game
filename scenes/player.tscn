@@ -202,4 +202,4 @@ animation = &"down"
 position = Vector2(0, -31)
 shape = SubResource("CapsuleShape2D_wko3n")
 
-[node name="AreaDetection" parent="." instance=ExtResource("2_hjonw")]
+[node name="PlayerDetection" parent="." instance=ExtResource("2_hjonw")]
