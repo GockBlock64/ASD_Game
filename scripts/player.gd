@@ -32,12 +32,10 @@ func _physics_process(delta):
 	
 	if x_direction:
 		velocity.x = x_direction * SPEED
-		print("moving in x")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if y_direction:
 		velocity.y = y_direction * SPEED
-		print("moving in y")
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
