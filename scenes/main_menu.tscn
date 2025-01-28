@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dk2l6a3ppl4dk"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 341.0
+offset_top = 120.0
+offset_right = -371.0
+offset_bottom = -768.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 140
+text = "MUSEUM OF TIME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1450, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 236.0
+offset_top = 441.0
+offset_right = -234.0
+offset_bottom = -493.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Start your first shift today at the Museum of Time for
+$0.01 an hour! Wow, that's a lot of money!"
+
+[node name="HowToPlay" type="Label" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 240.0
+offset_top = 673.0
+offset_right = -228.0
+offset_bottom = -178.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "How to play: There are questions scattered around the room,
+and answering each one correctly gives a piece of the
+Great Time Machine. Your objective is to rebuild this time machine
+and save the museum!"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1o7wfc5xr7k7"]
+
+[ext_resource type="Texture2D" uid="uid://chib71fx4uk6m" path="res://assets/images/heart.png" id="1_kxw7x"]
+
+[node name="PiecesLivesUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Life1" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1507.0
+offset_top = 86.0
+offset_right = 771.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_kxw7x")
+
+[node name="Life2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1615.0
+offset_top = 86.0
+offset_right = 879.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_kxw7x")
+
+[node name="Life3" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1727.0
+offset_top = 86.0
+offset_right = 991.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_kxw7x")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1518.0
+offset_top = 38.0
+offset_right = -53.0
+offset_bottom = -964.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Pieces collected: 0"

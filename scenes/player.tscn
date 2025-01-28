@@ -1,7 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://ghetwe30st2y"]
+[gd_scene load_steps=24 format=3 uid="uid://ghetwe30st2y"]
 
 [ext_resource type="Texture2D" uid="uid://bcws5eic0mp05" path="res://assets/images/rash_ketchup.png" id="1_yn0e8"]
-[ext_resource type="PackedScene" uid="uid://cjnn7htlcwyrf" path="res://scenes/area_detection.tscn" id="2_hjonw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6hib"]
 atlas = ExtResource("1_yn0e8")
@@ -201,5 +200,3 @@ animation = &"down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -31)
 shape = SubResource("CapsuleShape2D_wko3n")
-
-[node name="PlayerDetection" parent="." instance=ExtResource("2_hjonw")]

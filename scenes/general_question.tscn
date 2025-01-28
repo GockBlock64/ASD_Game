@@ -1,46 +1,88 @@
-[gd_scene format=3 uid="uid://u7rjyobhdk8g"]
+[gd_scene load_steps=2 format=3 uid="uid://u7rjyobhdk8g"]
 
-[node name="TutorialMapQuestion1" type="Control"]
+[ext_resource type="Script" path="res://scripts/general_question.gd" id="1_jcx8a"]
+
+[node name="Question" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jcx8a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 279.0
-offset_bottom = 23.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 717.0
+offset_top = 211.0
+offset_right = -665.0
+offset_bottom = -737.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
 text = "What company are you working for? 
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Choice1" type="Button" parent="CanvasLayer"]
-offset_left = 25.0
-offset_top = 25.0
-offset_right = 256.0
-offset_bottom = 56.0
+custom_minimum_size = Vector2(600, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 749.5
+offset_top = 370.0
+offset_right = -656.5
+offset_bottom = -612.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
 text = "The Museum of Time"
 
 [node name="Choice2" type="Button" parent="CanvasLayer"]
-offset_left = 25.0
-offset_top = 60.0
-offset_right = 256.0
-offset_bottom = 91.0
+custom_minimum_size = Vector2(600, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 744.5
+offset_top = 493.0
+offset_right = -656.5
+offset_bottom = -480.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
 text = "The U.S. Government"
 
 [node name="Choice3" type="Button" parent="CanvasLayer"]
-offset_left = 25.0
-offset_top = 95.0
-offset_right = 256.0
-offset_bottom = 126.0
+custom_minimum_size = Vector2(600, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 706.5
+offset_top = 633.0
+offset_right = -622.5
+offset_bottom = -357.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
 action_mode = 0
 text = "Time Variance Authority"
 
 [node name="Choice4" type="Button" parent="CanvasLayer"]
-offset_left = 25.0
-offset_top = 130.0
-offset_right = 256.0
-offset_bottom = 161.0
+custom_minimum_size = Vector2(600, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 766.5
+offset_top = 751.0
+offset_right = -684.5
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
 text = "The Museum of Art"

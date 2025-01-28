@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgoggahuors8o"]
+[gd_scene load_steps=5 format=3 uid="uid://bgoggahuors8o"]
 
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_hcq2v"]
 [ext_resource type="Texture2D" uid="uid://b0jtr6tlm8e2e" path="res://assets/images/pause_button.png" id="2_xf3iy"]
 [ext_resource type="Script" path="res://scripts/pause.gd" id="3_vw472"]
+[ext_resource type="Texture2D" uid="uid://e47fds7c16iu" path="res://assets/images/red_arrow.png" id="4_7ruh8"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -15,15 +16,48 @@ grow_vertical = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Virtual Joystick" parent="CanvasLayer" instance=ExtResource("1_hcq2v")]
+offset_left = 94.0
+offset_top = -313.0
+offset_right = 324.0
+offset_bottom = -78.0
 
 [node name="Pause" type="Button" parent="CanvasLayer"]
-offset_left = 21.0
-offset_top = 19.0
-offset_right = 163.0
-offset_bottom = 161.0
+offset_left = 37.0
+offset_top = 32.0
+offset_right = 179.0
+offset_bottom = 174.0
 icon = ExtResource("2_xf3iy")
 vertical_icon_alignment = 0
 expand_icon = true
 script = ExtResource("3_vw472")
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1539.0
+offset_top = 820.0
+offset_right = -52.0
+offset_bottom = -161.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "To next piece:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Arrow" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 920.0
+offset_top = 670.0
+offset_right = 280.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.13, 0.13)
+pivot_offset = Vector2(800, 300)
+texture = ExtResource("4_7ruh8")
 
 [connection signal="button_down" from="CanvasLayer/Pause" to="CanvasLayer/Pause" method="_on_button_down"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddqs137hn502"]
+
+[ext_resource type="Texture2D" uid="uid://cs0ma6c2s87uu" path="res://assets/images/win_screen.jpg" id="1_xx1jp"]
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_xx1jp")

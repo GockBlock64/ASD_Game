@@ -1,11 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqe4uh7q8kot5"]
+[gd_scene load_steps=14 format=3 uid="uid://cqe4uh7q8kot5"]
 
 [ext_resource type="PackedScene" uid="uid://d1vtko2m6wv06" path="res://scenes/tutorial_map.tscn" id="1_pupw7"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_q54tu"]
 [ext_resource type="PackedScene" uid="uid://ghetwe30st2y" path="res://scenes/player.tscn" id="2_x1tgq"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_sx5cr"]
 [ext_resource type="PackedScene" uid="uid://bgoggahuors8o" path="res://scenes/ui_menu.tscn" id="4_hdla5"]
+[ext_resource type="PackedScene" uid="uid://dftfqwtw4sw8d" path="res://scenes/question_trigger.tscn" id="5_dmpqp"]
 [ext_resource type="PackedScene" uid="uid://cbjaafonvcrtx" path="res://scenes/pause_menu.tscn" id="5_ng7l6"]
+[ext_resource type="PackedScene" uid="uid://dk2l6a3ppl4dk" path="res://scenes/main_menu.tscn" id="7_n7wad"]
+[ext_resource type="PackedScene" uid="uid://c1o7wfc5xr7k7" path="res://scenes/pieces_lives_ui.tscn" id="8_4bp8f"]
+[ext_resource type="PackedScene" uid="uid://u7rjyobhdk8g" path="res://scenes/general_question.tscn" id="8_icnom"]
+[ext_resource type="PackedScene" uid="uid://ddqs137hn502" path="res://scenes/win_screen.tscn" id="10_dna1j"]
+[ext_resource type="PackedScene" uid="uid://c3xfvtie6xn4" path="res://scenes/lose_screen.tscn" id="11_frj6l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0kr4"]
+size = Vector2(134, 226)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_q54tu")
@@ -13,7 +22,7 @@ script = ExtResource("1_q54tu")
 [node name="TutorialMap" parent="." instance=ExtResource("1_pupw7")]
 
 [node name="Player" parent="." instance=ExtResource("2_x1tgq")]
-position = Vector2(-1033, -521)
+position = Vector2(-1033, 207)
 collision_mask = 255
 script = ExtResource("3_sx5cr")
 
@@ -21,14 +30,24 @@ script = ExtResource("3_sx5cr")
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1033, -521)
+position = Vector2(-1033, 207)
 limit_left = -1102
 limit_top = -779
 limit_right = 1102
 limit_bottom = 779
 editor_draw_limits = true
 
+[node name="QuestionTrigger" parent="." instance=ExtResource("5_dmpqp")]
+
+[node name="CollisionShape2D" parent="QuestionTrigger/Area2D" index="0"]
+position = Vector2(-1037, -664)
+shape = SubResource("RectangleShape2D_e0kr4")
+
 [node name="UI" parent="." instance=ExtResource("4_hdla5")]
+visible = false
+
+[node name="CanvasLayer" parent="UI" index="0"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1210.0
@@ -39,9 +58,41 @@ color = Color(0, 0, 0, 0)
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_ng7l6")]
 
+[node name="CanvasLayer" parent="PauseMenu" index="0"]
+visible = false
+
+[node name="PiecesLivesUI" parent="." instance=ExtResource("8_4bp8f")]
+
+[node name="Question" parent="." instance=ExtResource("8_icnom")]
+
+[node name="WinScreen" parent="." instance=ExtResource("10_dna1j")]
+
+[node name="TextureRect" parent="WinScreen/CanvasLayer" index="0"]
+anchors_preset = 15
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoseScreen" parent="." instance=ExtResource("11_frj6l")]
+
+[node name="MainMenu" parent="." instance=ExtResource("7_n7wad")]
+
+[connection signal="body_entered" from="QuestionTrigger/Area2D" to="." method="display_question"]
 [connection signal="pressed" from="UI/CanvasLayer/Pause" to="." method="pause"]
 [connection signal="pressed" from="PauseMenu/CanvasLayer/Resume" to="." method="unpause"]
+[connection signal="pressed" from="PauseMenu/CanvasLayer/MainMenu" to="." method="back_to_menu"]
+[connection signal="pressed" from="PauseMenu/CanvasLayer/Restart" to="." method="restart"]
+[connection signal="pressed" from="Question/CanvasLayer/Choice1" to="." method="question_option1"]
+[connection signal="pressed" from="Question/CanvasLayer/Choice2" to="." method="question_option2"]
+[connection signal="pressed" from="Question/CanvasLayer/Choice3" to="." method="question_option3"]
+[connection signal="pressed" from="Question/CanvasLayer/Choice4" to="." method="question_option4"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/Button" to="." method="start_game"]
 
 [editable path="Player"]
+[editable path="QuestionTrigger"]
 [editable path="UI"]
 [editable path="PauseMenu"]
+[editable path="Question"]
+[editable path="WinScreen"]
+[editable path="MainMenu"]

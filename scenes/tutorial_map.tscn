@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d1vtko2m6wv06"]
+[gd_scene load_steps=31 format=3 uid="uid://d1vtko2m6wv06"]
 
 [ext_resource type="Texture2D" uid="uid://dwugqq57ow8hj" path="res://assets/images/TutorialMap.jpeg" id="1_w32uv"]
 
@@ -98,19 +98,6 @@ b = Vector2(773, 251)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bqj8s"]
 a = Vector2(647, 291)
 b = Vector2(649, 497)
-
-[sub_resource type="GDScript" id="GDScript_etrvq"]
-script/source = "extends Area2D
-
-func _ready():
-	$PlayerArea.connect(\"area_entered\", self, \"_on_PlayerArea_area_entered\")
-
-func _on_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv8g6"]
-size = Vector2(134, 226)
 
 [node name="TutorialMap" type="Node2D"]
 
@@ -275,14 +262,3 @@ shape = SubResource("SegmentShape2D_bqj8s")
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(645, 653, 20, 651, 20, 412, 645, 415, 646, 287, -191, 288, -197, 764, 644, 776)
-
-[node name="TimeBomb" type="Area2D" parent="."]
-collision_layer = 2
-script = SubResource("GDScript_etrvq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TimeBomb"]
-position = Vector2(-1037, -664)
-shape = SubResource("RectangleShape2D_mv8g6")
-
-[connection signal="area_entered" from="TimeBomb" to="TimeBomb" method="_on_area_entered"]
-[connection signal="body_entered" from="TimeBomb" to="TimeBomb" method="_on_body_entered"]
